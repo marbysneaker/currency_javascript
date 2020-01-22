@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency Graph</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<!-- Eur 100% Us 1.1091, 90% Aud 1.6132 62% Gbp 0.8481 120 % Brl :4.5188 22%, "NZD":1.6905 = 59.15%, "SGD":1.5011 = 66%-->
+<body>
+    <div class="title">
+        <h1>Currency Graph</h1>
+    </div>
+    <div class="graph-box">
+            <div class="graph-title">Currency Rate Based On EUR</div>
+            <div onclick="alert('EUR = 1.10 USD')"id="BarChart-bar-eur" class="graph-bar" style="height: 100%">EUR</div>
+            <div onclick="alert('USD = .90 EUR')"id="BarChart-bar-us" class="graph-bar" style="height: 90%">USD</div>
+            <div onclick="alert('AUD = .62 EUR')"id="BarChart-bar-aud" class="graph-bar" style="height: 62%">AUD</div>
+            <div onclick="alert('GBP = 1.20 EUR')" id="BarChart-bar-gbp" class="graph-bar" style="height: 120%">GBP</div>
+            <div onclick="alert('BRL = .22 EUR')"id="BarChart-bar-brl" class="graph-bar" style="height: 22%">BRL</div>
+            <div onclick="alert('NZD = .59 EUR')"id="BarChart-bar-nzd" class="graph-bar" style="height: 59%">NZD</div>
+            <div onclick="alert('SGD = .66 EUR')"id="BarChart-bar-sgd" class="graph-bar" style="height: 66%">SGD</div>
+
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>

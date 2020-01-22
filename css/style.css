@@ -1,0 +1,147 @@
+html{
+
+    background: var(--bg-color);
+    z-index: 10;
+    
+}
+:root {
+    --bg-color: #a2b9bc;
+    --bar-width: 95px;
+    }
+.title {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.graph-box{
+    height: 650px;
+    width: 900px;
+    border: 2px solid  #878f99;
+    /* border-width: 2px; */
+    /* border-color: black; */
+    background: #2e2e2e;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    position: relative;
+    
+}
+/* <!-- Eur 100% Us 1.1091, 90% Aud 1.6132 62%, Gbp 0.8481 120 %, Brl :4.5188  22%, "PHP" 56.521  --> */
+.graph-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 200px 1fr;
+    grid-column-gap: 5px;
+    
+}
+.graph-title {
+    grid-row: 1;
+    grid-column: 1 / span 10;
+    background: #878f99;
+    font-size: large;
+    padding-top: 10px;
+
+    box-sizing: content-box;
+}
+#BarChart-bar-eur{
+    grid-column: 2;
+    grid-row:  3;
+    background: #003f5c;
+    z-index: 3;
+    animation: mymove-eur 2s ;
+    
+}
+
+#BarChart-bar-us{
+    grid-column: 3;
+    grid-row:  3;
+    background: #374c80;
+    z-index: 4;
+    animation: mymove-usd 2s ;
+}
+#BarChart-bar-aud{
+    grid-column: 4;
+    grid-row:  3;
+    background: #7a5195;
+    z-index: 5;
+    animation: mymove-aud 2s ;
+}
+#BarChart-bar-gbp{
+    grid-column: 5;
+    grid-row:  3;
+    background: #bc5090;    
+    z-index: 6;
+    animation: mymove-gbp 2s ;
+   
+}
+#BarChart-bar-brl{
+    grid-column: 6;
+    grid-row:  3;
+    background: #ef5675;
+    z-index: 7;
+    animation: mymove-brl 2s ;
+    
+}
+#BarChart-bar-nzd{
+    grid-column: 7;
+    grid-row:  3;
+    background: #ff764a;
+    z-index: 8;
+    animation: mymove-nzd 2s ;
+    
+}
+#BarChart-bar-sgd{
+    grid-column: 8;
+    grid-row:  3;
+    background: #ffa600;
+    z-index: 9;
+    animation: mymove-sgd 2s ;
+    
+}
+
+#BarChart-bar-eur:hover, #BarChart-bar-us:hover, #BarChart-bar-gbp:hover, #BarChart-bar-aud:hover, #BarChart-bar-brl:hover, #BarChart-bar-nzd:hover, #BarChart-bar-sgd:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+    z-index: 10;
+}         
+.graph-bar{
+    position:absolute;
+    bottom:0;
+    width: var(--bar-width);
+    color: white;
+    padding-top: 30px;
+    box-sizing: border-box;
+    transition: transform .3s;
+}
+  
+  @keyframes mymove-eur {
+    from {left: -100px;}
+    to {left:0px}
+  }
+  @keyframes mymove-usd {
+    from {left: -200px;}
+    to {left:0px}
+  }
+  @keyframes mymove-aud {
+    from {left: -300px;}
+    to {left:0px}
+  }
+  @keyframes mymove-gbp {
+    from {left: -400px;}
+    to {left:0px}
+  }
+  @keyframes mymove-brl {
+    from {left: -500px;}
+    to {left:0px}
+  }
+  @keyframes mymove-nzd {
+    from {left: -600px;}
+    to {left:0px}
+  }
+  @keyframes mymove-sgd {
+    from {left: -700px;}
+    to {left:0px}
+  }
