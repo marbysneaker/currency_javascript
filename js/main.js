@@ -3,7 +3,7 @@ let rates =[]
 function displayData(){
     rates =[];
     dataOne = [];
-    let countries= ["USD","GBP","SGD"];
+    let countries= ["USD","GBP","SGD","CAD","AUD"];
     
 
     
@@ -15,13 +15,12 @@ function displayData(){
     console.log(rates[0]);
     dataOne.push(data);
     
-
-    for (country of countries){
-        console.log(country)
+    
+    
+    function displayBox(price){
+        let displayContainer = document.querySelector(".display-box");
+        displayContainer.textContent =`1 EUR = ${price}`;
     }
-    
-    
-
 
     for (let country of countries)
         {
@@ -34,6 +33,10 @@ function displayData(){
             let height = ((1.00/rates[0][country]) * 100)
             bars.style.height =height+"%";
             bars.classList.add("graph-bar");
+            bars.addEventListener('click', function(event) {
+                displayBox(rates[0][country]);
+            
+              })
             
 
         }
@@ -94,7 +97,7 @@ function displayData(){
 
 
    
-    addBars()
+
     
     });
     
