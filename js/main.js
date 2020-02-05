@@ -1,14 +1,37 @@
 
+let fetchDefault = "https://api.exchangeratesapi.io/latest"
+let newFetch =document.querySelector(".drop-submit")
+
+function getOption(e) { 
+    selectElement =  
+            document.querySelector('.drop-down'); 
+              
+    output = selectElement.value; 
+
+    fetchDefault = "https://api.exchangeratesapi.io/latest?base="+output;
+    
+    alert(fetchDefault)
+    e.preventDefault()
+    alert(fetchDefault)
+
+
+} 
+// newFetch.addEventListener('click',function(even) {
+    
+//     getOption()
+//     displayData(fetchDefault)
+
+// })
+
 let rates =[]
-function displayData(){
+function displayData(fetchDefault){
     rates =[];
     dataOne = [];
     let countries= ["USD","GBP","SGD","CAD","AUD"];
     
-
     
     
-    fetch("https://api.exchangeratesapi.io/latest").then(response => response.json()).then(data => {
+    fetch(fetchDefault).then(response => response.json()).then(data => {
     console.log("Got the data!");
     console.log(data);
     rates.push(data.rates);
@@ -74,16 +97,18 @@ function displayData(){
         
                 
     }    
-    
+    let dropDown = document.querySelector(".drop-down")
     let nav = document.querySelector(".nav");
-    for (let country of Object.keys(rates[0])){
-        
-        
-        
+    for (let country of Object.keys(rates[0])){       
         let navCountry = document.createElement("div");
         navCountry.textContent = country;
         nav.appendChild(navCountry);
         navCountry.classList.add("nav-country")
+        let option = document.createElement("option")
+        option.textContent = country
+        dropDown.appendChild(option)
+        option.value = country
+        
         
     }
     let allNav = document.querySelectorAll(".nav-country")
@@ -93,13 +118,9 @@ function displayData(){
             addClick(nav.textContent);
           })
     }
-
-
-
-   
-
     
     });
     
 }
-displayData()
+
+displayData(fetchDefault)
