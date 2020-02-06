@@ -129,7 +129,10 @@ html{
   right: 350px;
   top: 40px;
 }
-
+.drop-down, .drop-submit {
+  width: 70px;
+  
+}
 
 
 
